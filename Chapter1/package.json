@@ -1,6 +1,5 @@
 {
   "name": "chapter1",
-  "description": "Build a Twitter Like app using the MVC ddesign pattern",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,8 +9,8 @@
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "ejs": "~2.5.7",
     "express": "~4.15.5",
+    "jade": "~1.11.0",
     "morgan": "~1.9.0",
     "node-sass-middleware": "0.9.8",
     "serve-favicon": "~2.4.5"

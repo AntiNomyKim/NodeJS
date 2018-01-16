@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Wohp's error</title>
+        <% include ../partials/stylesheet %>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <% include ../partials/header %>
+        <div class="container">
+            <div class="page-header m-t-1">
+                <h1>Sorry: <%= message %></h1>
+                <h2><%= err.status %></h2>
+                <pre><%= err.stack %></pre>
+            </div>
+        </div>
+        <% include ../partials/footer %>
+        <% include ../partials/javascript %>
+    </body>
+</html>
