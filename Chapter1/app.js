@@ -54,7 +54,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //패스포트용
 //세션용 비밀키
-app.use(seesion({
+app.use(session({
   secret: 'sometextgohere',
   saveUninitialized: true,
   resave: true,
@@ -74,6 +74,9 @@ app.use(flash());
 
 app.use('/', index);
 app.use('/users', users);
+
+app.get('/comments', comments.hasAuthorization, comments.list);
+app.post('/comments', comments.hasAuthorization, comments.create);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

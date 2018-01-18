@@ -1,17 +1,19 @@
 //패스포트 모듈 로드
 var LocalStrategy = require('passport-local').Strategy;
 //User모델 가져오기
-var User = require('../models/users');
+var User = require('../models/user');
 
 module.exports = function(passport){
     //패스포트 초기화 설정
     //세션을 위해 user직렬화
     passport.serializeUser(function(user, done){
-        done(err, user);
+        done(null, user);
     });
     //user 역직렬화
     passport.deserializeUser(function(id, done){
-        done(null, user.id);
+        User.findById(id, function(err, user){
+            done(err, user);
+        })
     });
 
     //local strategy 사용

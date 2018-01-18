@@ -20,11 +20,6 @@ router.get('/signup', function(req, res)
   res.render('signup', {title: 'Signup Page', message:req.flash('signupMessage')});
 });
 
-router.get('/profile', function(req, res, next)
-{
-  res.render('profile', {title: 'Profile Page', user: req.user, avatar: gravatar.url(req.user.email, {s:'100', r:'x', d:'retro'}, true)});
-});
-
 // POST메서드용 로그인 처리
 router.post('/login', passport.authenticate('local-login', {
   successRedirect:'/profile',
@@ -49,7 +44,7 @@ function isLoggedIn(req, res, next){
 
 // Get메서드용 로그아웃 페이지
 router.get('/logout', function(req, res){
-  res.logout();
+  req.logout();
   res.redirect('/');
 });
 
