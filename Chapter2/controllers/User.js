@@ -11,9 +11,9 @@ exports.create = function(req, res){
     });
 };
 
-exports.list = funtion(req, res){
+exports.list = function(req, res){
     // 전체 User목록
     models.User.findAll({}).then(function(users){
         res.json(users);
-    })
-}
+    });
+};
